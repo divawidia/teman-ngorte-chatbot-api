@@ -31,7 +31,7 @@
     }
     ],
     "images": ["gcr.io/$PROJECT_ID/teman-ngorte-api:$COMMIT_SHA"],
-    "option":{
+    "options":{
       "logging": "CLOUD_LOGGING_ONLY"
     }
 }
