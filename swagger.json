@@ -1,0 +1,408 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Teman Ngorte Chatbot API",
+    "description": "Documentation of teman ngorte chatbot app API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://teman-ngorte-api-jum5dt3leq-et.a.run.app/api/v1/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "User",
+      "description": "Operations about user"
+    },
+    {
+      "name": "Chatbot Message",
+      "description": "Access to Chatbot Message"
+    }
+  ],
+  "paths": {
+    "/chatbot-guest": {
+      "post": {
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "tags": ["Chatbot Message"],
+        "summary": "Create message to chatbot",
+        "description": "",
+        "operationId": "chatbotGuestPost",
+        "requestBody": {
+          "required": true,
+          "description": "Create message to chatbot",
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "msg": {
+                    "type": "string"
+                  }
+                },
+                "required": ["msg"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Message"
+                },
+                "examples": {
+                  "Create message to chatbot": {
+                    "value": "{\n    \"data\": {\n      \"confidence_value\": {\n          \"label\": \"salam\",\n          \"score\": 0.974\n      },\n      \"data_message\": {\n          \"bot_response\": \"Halo! Namaku TimpalBot. Aku bersedia menjadi teman bicaramu, juga bisa membantumu untuk mengetahui informasi dasar seputar kesehatan mental. Apa yang ingin kamu tanyakan atau sampaikan?\",\n          \"bot_timestamp\": \"Wed, 12 Jun 2024 18:49:16 GMT\",\n          \"id\": 1,\n          \"user_message\": \"halo\",\n          \"user_timestamp\": \"Wed, 12 Jun 2024 18:49:14 GMT\"\n      },\n      \"user\": {\n          \"id\": 2,\n          \"username\": \"Guesta650e66a-b8a3-4384-a924-9986b5951d8b\"\n      },\n      \"username_alias\": \"Guest\"\n  },\n  \"message\": \"Success\"\n}"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "tags": ["Chatbot Message"],
+        "summary": "Retrieve all guest user's message",
+        "description": "",
+        "operationId": "chatbotGuestGet",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Message"
+                },
+                "examples": {
+                  "Retrieve all guest user's message": {
+                    "value": "{\n  \"data\": {\n      \"data_message\": [\n          {\n              \"bot_response\": \"Halo! Namaku TimpalBot. Aku bersedia menjadi teman bicaramu, juga bisa membantumu untuk mengetahui informasi dasar seputar kesehatan mental. Apa yang ingin kamu tanyakan atau sampaikan?\",\n              \"bot_timestamp\": \"Wed, 12 Jun 2024 18:49:16 GMT\",\n              \"id\": 1,\n              \"user_message\": \"halo\",\n              \"user_timestamp\": \"Wed, 12 Jun 2024 18:49:14 GMT\"\n          },\n          {\n              \"bot_response\": \"Ke mana Anda mencari bantuan akan bergantung pada sifat masalah dan/atau gejala dan apa yang paling cocok untuk Anda. Seringkali, tempat terbaik untuk memulai adalah dengan berbicara dengan seseorang yang Anda percayai tentang kekhawatiran Anda, seperti anggota keluarga, teman, pendeta, penyedia layanan kesehatan, atau profesional lainnya. Memiliki dukungan sosial ini sangat penting dalam penyembuhan penyakit mental, dan Anda akan dapat meminta rujukan atau rekomendasi untuk ahli kesehatan mental tepercaya. Coba cari tahu informasi tentang psikolog kesehatan mental di daerah Anda.\",\n              \"bot_timestamp\": \"Wed, 12 Jun 2024 21:14:33 GMT\",\n              \"id\": 2,\n              \"user_message\": \"aku depresi, apa yang harus aku lakukan?\",\n              \"user_timestamp\": \"Wed, 12 Jun 2024 21:14:32 GMT\"\n          }\n      ],\n      \"user\": {\n          \"id\": 2,\n          \"username\": \"Guesta650e66a-b8a3-4384-a924-9986b5951d8b\"\n      },\n      \"username_alias\": \"Guest\"\n  },\n  \"message\": \"Success\"\n}"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/chatbot-user": {
+      "post": {
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "tags": ["Chatbot Message"],
+        "summary": "Create message to chatbot",
+        "description": "",
+        "operationId": "chatbotUserPost",
+        "requestBody": {
+          "required": true,
+          "description": "Create message to chatbot",
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "msg": {
+                    "type": "string"
+                  }
+                },
+                "required": ["msg"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Message"
+                },
+                "examples": {
+                  "Create message to chatbot": {
+                    "value": "{\n    \"data\": {\n      \"confidence_value\": {\n          \"label\": \"salam\",\n          \"score\": 0.974\n      },\n      \"data_message\": {\n          \"bot_response\": \"Halo! Namaku TimpalBot. Aku bersedia menjadi teman bicaramu, juga bisa membantumu untuk mengetahui informasi dasar seputar kesehatan mental. Apa yang ingin kamu tanyakan atau sampaikan?\",\n          \"bot_timestamp\": \"Wed, 12 Jun 2024 21:31:30 GMT\",\n          \"id\": 5,\n          \"user_message\": \"halo\",\n          \"user_timestamp\": \"Wed, 12 Jun 2024 21:31:30 GMT\"\n      },\n      \"user\": {\n          \"id\": 3,\n          \"username\": \"dipawidia\"\n      }\n  },\n  \"message\": \"Success\"\n}"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "tags": ["Chatbot Message"],
+        "summary": "Retrieve all user's message",
+        "description": "",
+        "operationId": "chatbotUserGet",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Message"
+                },
+                "examples": {
+                  "Retrieve all guest user's message": {
+                    "value": "{\n  \"data\": {\n    \"data_message\": [\n        {\n            \"bot_response\": \"Halo! Namaku TimpalBot. Aku bersedia menjadi teman bicaramu, juga bisa membantumu untuk mengetahui informasi dasar seputar kesehatan mental. Apa yang ingin kamu tanyakan atau sampaikan?\",\n            \"bot_timestamp\": \"Wed, 12 Jun 2024 21:30:31 GMT\",\n            \"id\": 3,\n            \"user_message\": \"halo\",\n            \"user_timestamp\": \"Wed, 12 Jun 2024 21:30:31 GMT\"\n        },\n        {\n            \"bot_response\": \"Halo! Namaku TimpalBot. Aku bersedia menjadi teman bicaramu, juga bisa membantumu untuk mengetahui informasi dasar seputar kesehatan mental. Apa yang ingin kamu tanyakan atau sampaikan?\",\n            \"bot_timestamp\": \"Wed, 12 Jun 2024 21:30:49 GMT\",\n            \"id\": 4,\n            \"user_message\": \"halo\",\n            \"user_timestamp\": \"Wed, 12 Jun 2024 21:30:49 GMT\"\n        },\n        {\n            \"bot_response\": \"Halo! Namaku TimpalBot. Aku bersedia menjadi teman bicaramu, juga bisa membantumu untuk mengetahui informasi dasar seputar kesehatan mental. Apa yang ingin kamu tanyakan atau sampaikan?\",\n            \"bot_timestamp\": \"Wed, 12 Jun 2024 21:31:30 GMT\",\n            \"id\": 5,\n            \"user_message\": \"halo\",\n            \"user_timestamp\": \"Wed, 12 Jun 2024 21:31:30 GMT\"\n        }\n    ],\n    \"user\": {\n        \"id\": 3,\n        \"username\": \"dipawidia\"\n    }\n  },\n\"message\": \"Success\"\n}"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": ["User"],
+        "summary": "Create user",
+        "description": "This endpoint is use for register a new user.",
+        "operationId": "createUser",
+        "requestBody": {
+          "required": true,
+          "description": "Create user",
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "required": ["username", "password"]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              },
+              "example": {
+                "username": "dipawidia",
+                "password": "wiartha2001"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "examples": {
+                  "Register a New User": {
+                    "value": "{\n    \"data\": {\n        \"id\": 3,\n        \"username\": \"dipawidia\"\n    },\n    \"message\": \"successfully added user\"\n}"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/login-guest": {
+      "post": {
+        "tags": ["User"],
+        "summary": "Creates login access for guest user (without register needed)",
+        "description": "This endpoint is use to creates login access for guest user (without register needed)",
+        "operationId": "loginGuest",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "examples": {
+                  "Register a New Guest User": {
+                    "value": "{\n    \"data\": {\n      \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNzE4MTIxNDMyLCJqdGkiOiI5MmI1OTVkOS0zOTY2LTQzZjUtODQ0YS02OTNmZjc3ODhlMDQiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjp7ImlkIjoyLCJ1c2VybmFtZSI6Ikd1ZXN0YTY1MGU2NmEtYjhhMy00Mzg0LWE5MjQtOTk4NmI1OTUxZDhiIn0sIm5iZiI6MTcxODEyMTQzMiwiY3NyZiI6IjQ2M2I0M2M4LTIzNzQtNDc1MS05NDk0LTQ2OWVmYjAxN2JiNCIsImV4cCI6MTcxODcyNjIzMn0.4br3YYSN8hukgxJ5CyGeObeBilZnyRfFhkQwmIhfUNU\",\n      \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxODEyMTQzMiwianRpIjoiNTY0Y2YxOTAtNDAzNi00MjU5LWI0YzMtN2RmOTI0YzYxZWQzIiwidHlwZSI6InJlZnJlc2giLCJzdWIiOnsiaWQiOjIsInVzZXJuYW1lIjoiR3Vlc3RhNjUwZTY2YS1iOGEzLTQzODQtYTkyNC05OTg2YjU5NTFkOGIifSwibmJmIjoxNzE4MTIxNDMyLCJjc3JmIjoiYTQ3NWEyODgtMjhlMi00OGMzLTgwZDAtM2U0OTI5YTM1NDM0IiwiZXhwIjoxNzE4NzI2MjMyfQ.gfG9SjhSgAprHxSWPeB_6ruS6w2uLHp-Guje_ZHvv64\",\n      \"user_data\": {\n          \"id\": 2,\n          \"username\": \"Guesta650e66a-b8a3-4384-a924-9986b5951d8b\"\n      },\n      \"username_alias\": \"Guest\"\n  },\n  \"message\": \"Successfully login as a guest\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": ["User"],
+        "summary": "Logs user into the system",
+        "description": "This endpoint is use for logs registered user into the system",
+        "operationId": "loginUser",
+        "requestBody": {
+          "required": true,
+          "description": "Login user",
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "required": ["username", "password"]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              },
+              "example": {
+                "username": "dipawidia",
+                "password": "wiartha2001"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "examples": {
+                  "Login User": {
+                    "value": "{\n    \"data\": {\n      \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNzE4MTIxOTY0LCJqdGkiOiI4YWU2ZjdkMi02ZTdjLTQ2NDgtODZhMi1kOWRjNDIzYTQzYzYiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjp7ImlkIjozLCJ1c2VybmFtZSI6ImRpcGF3aWRpYSJ9LCJuYmYiOjE3MTgxMjE5NjQsImNzcmYiOiI1MmMzMTM4Zi0xM2Q1LTRkOTgtOWY1NS0wNzRjYmNiMThkN2EiLCJleHAiOjE3MTg3MjY3NjR9.BDSUd1R60JYIcdxd16FnFZd-LHY9CTtBkr2lnKNnNr0\",\n      \"data\": {\n          \"id\": 3,\n          \"username\": \"dipawidia\"\n      },\n      \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxODEyMTk2NCwianRpIjoiNDU0YWM4ZjMtODk2Zi00NDYzLTg5N2UtMTVjMjQ1YzBjYzBhIiwidHlwZSI6InJlZnJlc2giLCJzdWIiOnsiaWQiOjMsInVzZXJuYW1lIjoiZGlwYXdpZGlhIn0sIm5iZiI6MTcxODEyMTk2NCwiY3NyZiI6ImMxYTExM2M0LTc3NDAtNGViNC1iMzViLWJmZGUyZTAyMDAyZiIsImV4cCI6MTcxODcyNjc2NH0.kTCLe8lvpcBXsBipMxUdHUPqMI4zE0DZIM7gULyUmg8\"\n  },\n  \"message\": \"Sukses Login!\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid username/password supplied",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Invalid user's password": {
+                    "value": "{\n    \"data\": [],\n    \"message\": \"Kombinasi password salah\"\n}"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/logout": {
+      "delete": {
+        "tags": ["User"],
+        "summary": "Logs out current logged in user session",
+        "description": "This endpoint is use for logs out current logged in user session",
+        "operationId": "logoutUser",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Message": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "user_msg": {
+            "type": "string",
+            "example": "Halo"
+          },
+          "bot_response": {
+            "type": "string",
+            "example": "Halo! namaku TimpalBot"
+          },
+          "user_timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2024-06-12 18:49:14"
+          },
+          "bot_timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2024-06-12 18:49:14"
+          },
+          "user_id": {
+            "$ref": "#/components/schemas/User"
+          }
+        },
+        "xml": {
+          "name": "message"
+        }
+      },
+      "User": {
+        "required": ["username", "password"],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "example": 10
+          },
+          "username": {
+            "type": "string",
+            "example": "theUser"
+          },
+          "password": {
+            "type": "string",
+            "example": "12345"
+          }
+        },
+        "xml": {
+          "name": "user"
+        }
+      }
+    },
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

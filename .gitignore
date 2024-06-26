@@ -1,0 +1,12 @@
+teman_ngorte_env
+.env
+__pycache__
+.idea
+app\__pycache__
+migrations\__pycache__
+app\controller\__pycache__
+app\model\__pycache__
+migrations\versions\__pycache__
+private_key.ppk
+.venv
+venv
