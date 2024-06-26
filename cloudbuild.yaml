@@ -19,4 +19,4 @@ steps:
 images:
 - 'gcr.io/$PROJECT_ID/teman-ngorte-api:$COMMIT_SHA'
 options:
-logging: CLOUD_LOGGING_ONLY
+  logging: CLOUD_LOGGING_ONLY
