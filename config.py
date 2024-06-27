@@ -21,8 +21,8 @@ class Config(object):
     ACCESS_EXPIRES = timedelta(days=7)
     JWT_SECRET_KEY = str(os.environ.get("JWT_SECRET"))
     JWT_ACCESS_TOKEN_EXPIRES = ACCESS_EXPIRES
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://' + USERNAME + ':' + PASSWORD + '@' + HOST + ':' + PORT + '/' + DATABASE
-    # SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://adminTemanNgorte:ekhIODsyODidT935sD64@103.150.196.25:3306/temanNgorte'
+    # SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://' + USERNAME + ':' + PASSWORD + '@' + HOST + ':' + PORT + '/' + DATABASE
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://adminTemanNgorte:ekhIODsyODidT935sD64@103.150.196.25:3306/temanNgorte'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECORD_QUERIES = True
     CORS_HEADERS = 'Content-Type'
