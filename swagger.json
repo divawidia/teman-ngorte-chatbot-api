@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://teman-ngorte-api-876903685328.asia-southeast2.run.app/api/v1/"
+      "url": "http://127.0.0.1:5000/api/v1/"
     }
   ],
   "tags": [
@@ -194,15 +194,6 @@
                 },
                 "required": ["username", "password"]
               }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              },
-              "example": {
-                "username": "dipawidia",
-                "password": "wiartha2001"
-              }
             }
           }
         },
@@ -275,15 +266,6 @@
                   }
                 },
                 "required": ["username", "password"]
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              },
-              "example": {
-                "username": "dipawidia",
-                "password": "wiartha2001"
               }
             }
           }

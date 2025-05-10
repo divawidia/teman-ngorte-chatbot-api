@@ -1,5 +1,6 @@
 import os
 from datetime import datetime, timedelta
+import secrets
 
 # basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -19,10 +20,10 @@ class Config(object):
     PORT = str(os.environ.get("DB_PORT"))
     
     ACCESS_EXPIRES = timedelta(days=7)
-    JWT_SECRET_KEY = str(os.environ.get("JWT_SECRET"))
+    JWT_SECRET_KEY = str(secrets.SystemRandom().getrandbits(128))
     JWT_ACCESS_TOKEN_EXPIRES = ACCESS_EXPIRES
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://' + USERNAME + ':' + PASSWORD + '@' + HOST + ':' + PORT + '/' + DATABASE
-    # SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://adminTemanNgorte:ekhIODsyODidT935sD64@103.150.196.25:3306/temanNgorte'
+    # SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://' + USERNAME + ':' + PASSWORD + '@' + HOST + ':' + PORT + '/' + DATABASE
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://Equinox6811:p29tsQe6CJE8@dipawidia-portfolios.mysql.database.azure.com:3306/teman-ngorte'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECORD_QUERIES = True
     # CORS_HEADERS = 'Content-Type'
