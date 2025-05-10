@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "http://127.0.0.1:5000/api/v1/"
+      "url": "https://teman-ngorte-api-876903685328.asia-southeast2.run.app/api/v1/"
     }
   ],
   "tags": [
