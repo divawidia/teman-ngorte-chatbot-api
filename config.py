@@ -22,8 +22,7 @@ class Config(object):
     ACCESS_EXPIRES = timedelta(days=7)
     JWT_SECRET_KEY = str(secrets.SystemRandom().getrandbits(128))
     JWT_ACCESS_TOKEN_EXPIRES = ACCESS_EXPIRES
-    # SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://' + USERNAME + ':' + PASSWORD + '@' + HOST + ':' + PORT + '/' + DATABASE
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://Equinox6811:p29tsQe6CJE8@dipawidia-portfolios.mysql.database.azure.com:3306/teman-ngorte'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://' + USERNAME + ':' + PASSWORD + '@' + HOST + ':' + PORT + '/' + DATABASE
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECORD_QUERIES = True
     # CORS_HEADERS = 'Content-Type'
